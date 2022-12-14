@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Subscribe.ashx" hash="2f5dff05" filehash="3234a8a81c80" flags="130000" assembly="Server" type="Server.Subscribe">
+    <filedeps>
+        <filedep name="/Subscribe.ashx" />
+    </filedeps>
+</preserve>

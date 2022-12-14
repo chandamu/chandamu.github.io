@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Reports.ashx" hash="2f5dff05" filehash="ffffc1c9a1ddab57" flags="130000" assembly="Server" type="Server.Reports">
+    <filedeps>
+        <filedep name="/Reports.ashx" />
+    </filedeps>
+</preserve>

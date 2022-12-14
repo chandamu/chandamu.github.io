@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Feedback.ashx" hash="2f5dff05" filehash="3f49c75c7f92" flags="130000" assembly="Server" type="Server.Feedback">
+    <filedeps>
+        <filedep name="/Feedback.ashx" />
+    </filedeps>
+</preserve>
