@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/RSS.ashx" hash="2f5dff05" filehash="fffffe6932da5b3a" flags="130000" assembly="Server" type="Server.RSS">
+    <filedeps>
+        <filedep name="/RSS.ashx" />
+    </filedeps>
+</preserve>

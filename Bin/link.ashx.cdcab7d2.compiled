@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Link.ashx" hash="2f5dff05" filehash="177446b73fa0" flags="130000" assembly="Server" type="Server.PutLink">
+    <filedeps>
+        <filedep name="/Link.ashx" />
+    </filedeps>
+</preserve>

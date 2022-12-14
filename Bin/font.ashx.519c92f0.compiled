@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/CSS/font.ashx" hash="2f5dff05" filehash="2fa013477121" flags="130000" assembly="Server" type="Server.Font">
+    <filedeps>
+        <filedep name="/CSS/font.ashx" />
+    </filedeps>
+</preserve>
