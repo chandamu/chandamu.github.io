@@ -2,14 +2,14 @@
 {
 	font-family: 'RaviPrakash';
 	src: url('f/RaviPrakash.eot');
-	src: local('RaviPrakash'), url('font.ashx?u=RaviPrakash.eot&amp;iefix') format('eot'), url('font.ashx?u=RaviPrakash.woff') format('woff'), url('font.ashx?u=RaviPrakash.svg') format('svg');
+	src: local('RaviPrakash'), url('f/RaviPrakash.eot&amp;iefix') format('eot'), url('f/RaviPrakash.woff') format('woff'), url('f/RaviPrakash.svg') format('svg');
 	font-style: normal;
 }
 @font-face
 {
 	font-family: 'RamaneeyaRegular';
 	src: url('f/RamaneeyaWin.eot');
-	src: local('RamaneeyaWin'), url('font.ashx?u=RamaneeyaWin.eot?iefix') format('eot'), url('font.ashx?u=RamaneeyaWin.woff') format('woff'), url('font.ashx?u=RamaneeyaWin.svg') format('svg');
+	src: local('RamaneeyaWin'), url('f/RamaneeyaWin.eot?iefix') format('eot'), url('f/RamaneeyaWin.woff') format('woff'), url('f/RamaneeyaWin.svg') format('svg');
 	font-style: normal;
 }
 body

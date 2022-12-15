@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/GLink.ashx" hash="2f5dff05" filehash="d605e66db43" flags="130000" assembly="Server" type="Server.GetLink">
-    <filedeps>
-        <filedep name="/GLink.ashx" />
-    </filedeps>
-</preserve>
