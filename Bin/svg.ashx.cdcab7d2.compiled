@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/svg.ashx" hash="2f5dff05" filehash="c3e561533fe" flags="130000" assembly="Server" type="Server.Svg">
-    <filedeps>
-        <filedep name="/svg.ashx" />
-    </filedeps>
-</preserve>

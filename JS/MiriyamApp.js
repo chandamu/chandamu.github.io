@@ -1685,12 +1685,12 @@ require(['ss', 'MiriyamUtil', 'MiriyamLib2'], function(ss, MiriyamUtil, MiriyamL
   }
   MiriyamApp$Metrics.export2 = function(metric, time, identifier, percentage) {
     var content = 'm=' + MiriyamApp$Metrics._toString2(metric) + ((time == null) ? '' : '&t=' + time) + ((identifier == null) ? '' : '&i=' + identifier) + ((percentage == null) ? '' : '&s=' + percentage);
-    Ajax.makeCall('/Metrics.ashx', (function(err, data, xhr) {
+    Ajax.makeCall('metrics.html', (function(err, data, xhr) {
       MiriyamApp$Metrics.showStats();
     }), 'POST', content);
   };
   MiriyamApp$Metrics.showStats = function() {
-    Ajax.makeCall('/Stats.ashx?r=' + new Date().toUTCString(), (function(err, data, xhr) {
+    Ajax.makeCall('stats.html?r=' + new Date().toUTCString(), (function(err, data, xhr) {
       window.document.getElementById('totCalcs').innerHTML = data;
     }), 'GET');
   };

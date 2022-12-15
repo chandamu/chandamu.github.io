@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Stats.ashx" hash="2f5dff05" filehash="ffffe50c6be7fc80" flags="130000" assembly="Server" type="Server.Stats">
-    <filedeps>
-        <filedep name="/Stats.ashx" />
-    </filedeps>
-</preserve>
