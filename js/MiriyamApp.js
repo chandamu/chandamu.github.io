@@ -1617,35 +1617,35 @@ require(['ss', 'MiriyamUtil', 'MiriyamLib2'], function(ss, MiriyamUtil, MiriyamL
   };
   MiriyamApp$MenuItems.onDedicatedTo = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/dedicated.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/dedicated.html');
   };
   MiriyamApp$MenuItems.onFAQ = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/faq.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/faq.html');
   };
   MiriyamApp$MenuItems.onLimitations = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/Limitations.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/Limitations.html');
   };
   MiriyamApp$MenuItems.onCaseStudy = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/CaseStudy.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/CaseStudy.html');
   };
   MiriyamApp$MenuItems.onReleaseNotes = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/Release.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/Release.html');
   };
   MiriyamApp$MenuItems.onAbout = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/About.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/About.html');
   };
   MiriyamApp$MenuItems.onShowCredits = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/Credits.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/Credits.html');
   };
   MiriyamApp$MenuItems.onContact = function() {
     MiriyamApp$Worker.hideToolbar();
-    MiriyamApp$MenuItems._makeStaticCall('Menu/Contact.html');
+    MiriyamApp$MenuItems._makeStaticCall('menu/Contact.html');
   };
   MiriyamApp$MenuItems._onShowLab = function() {
     window.document.getElementById('result').innerHTML = '';
