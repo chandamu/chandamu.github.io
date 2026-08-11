@@ -1,0 +1,247 @@
+{
+    "groups": [
+        {
+            "id": "intro",
+            "title": "1. పరిచయం మరియు విశ్వసనీయ సమాచారం",
+            "groupIcon": "help",
+            "items": [
+                {
+                    "link": "https://te.wikipedia.org/wiki/%E0%B0%9B%E0%B0%82%E0%B0%A6%E0%B0%B8%E0%B1%8D%E0%B0%B8%E0%B1%81",
+                    "text": "ఛందస్సు - తెలుగు వికీపీడియా",
+                    "description": "గురు, లఘు, గణం, యతి, ప్రాస, వృత్తం, జాతి వంటి ప్రాథమిక పదాల కోసం ప్రారంభ స్థలం.",
+                    "type": "link"
+                },
+                {
+                    "link": "http://sanskrit.sai.uni-heidelberg.de/Chanda/HTML/",
+                    "text": "Sanskrit Encyclopaedia of Prosody",
+                    "description": "భారతీయ ఛందో సంప్రదాయాల తులనాత్మక అధ్యయనానికి ఉపయోగకరమైన సూచన గ్రంథసూచి.",
+                    "type": "link"
+                },
+                {
+                    "link": "https://sanskritdocuments.org/telugu/index.html",
+                    "text": "Sanskrit Documents (తెలుగు లిపి)",
+                    "description": "ఛందో సంబంధిత సంస్కృత గ్రంథాలను తెలుగు లిపిలో చదవడానికి అనుకూలమైన వేదిక.",
+                    "type": "link"
+                }
+            ]
+        },
+        {
+            "id": "books",
+            "title": "2. పుస్తకాలు మరియు PDFలు",
+            "groupIcon": "book",
+            "items": [
+                {
+                    "link": "https://chandamu.github.io/book.html",
+                    "text": "ఛందోరత్నావళి (డిజిటల్ పుస్తకం)",
+                    "description": "తెలుగు ఛందస్సుల లక్షణాలు మరియు ఉదాహరణలతో ఉపయోగకరమైన సూచన గ్రంథం.",
+                    "type": "book"
+                },
+                {
+                    "link": "https://archive.org/details/in.ernet.dli.2015.497287",
+                    "text": "ఛందో వ్యాకరణము (Archive PDF)",
+                    "description": "ఛందస్సు, వ్యాకరణం, మరియు సంబంధిత సాహిత్య అంశాలపై సంప్రదాయ గ్రంథం.",
+                    "type": "book"
+                },
+                {
+                    "link": "https://archive.org/details/chandapadakosham018843mbp",
+                    "text": "ఛందః పదకోశము (Archive)",
+                    "description": "బోధకులు మరియు పరిశోధకులు ఉపయోగించే క్లాసిక్ ఛందో పదసూచిక గ్రంథం.",
+                    "type": "book"
+                },
+                {
+                    "link": null,
+                    "text": "ముద్రిత సూచన గ్రంథాలు",
+                    "description": "కోవెల సాంపత్కుమారాచార్యుల ఛందఃపదకోశం మరియు ప్రామాణిక తెలుగు వ్యాకరణ గ్రంథాలు సాధనంలో ఉపయుక్తం.",
+                    "type": "book"
+                }
+            ]
+        },
+        {
+            "id": "libraries",
+            "title": "3. డిజిటల్ గ్రంథాలయాలు",
+            "groupIcon": "library",
+            "items": [
+                {
+                    "link": "http://andhrabharati.com/",
+                    "text": "ఆంధ్రభారతి",
+                    "description": "పద్యాలు, సాహిత్య పాఠాలు, మరియు నిఘంటు వనరులతో సమృద్ధిగా ఉన్న తెలుగు సాహిత్య వేదిక.",
+                    "type": "link"
+                },
+                {
+                    "link": "http://www.telugubhaghavatam.org/",
+                    "text": "పోతన భాగవతం",
+                    "description": "పద్యలయాన్ని పరిశీలించడానికి అనువైన క్లాసిక్ పద్య పాఠ్య వనరు.",
+                    "type": "link"
+                },
+                {
+                    "link": "https://www.teluguthesis.com/",
+                    "text": "TeluguThesis",
+                    "description": "తెలుగు మరియు సంస్కృత పుస్తకాల డిజిటల్ సంకలనం.",
+                    "type": "link"
+                },
+                {
+                    "link": "https://sundarayya.org/telugu-uploaded-books",
+                    "text": "సుందరయ్య డిజిటల్ పుస్తకాలు",
+                    "description": "పాత తెలుగు గ్రంథాల స్వేచ్ఛా ఆర్కైవ్.",
+                    "type": "link"
+                }
+            ]
+        },
+        {
+            "id": "videos",
+            "title": "4. వీడియో పాఠాలు",
+            "groupIcon": "video",
+            "items": [
+                {
+                    "link": "https://www.youtube.com/playlist?list=PLzg0lqO4Q9DxzAYtpO7u8xQC2_cofaVxk",
+                    "text": "తెలుగు ఛందస్సు ప్లేలిస్ట్",
+                    "description": "ప్రాథమిక నుండి మధ్యస్థ ఉదాహరణల వరకు ఆరోహణ చేసే పాఠాలు.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/watch?v=IyDAHJ2NILQ",
+                    "text": "ఛందస్సు భాగం-1",
+                    "description": "మొదటిసారి నేర్చుకునేవారికి ప్రారంభ పాఠం.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/watch?v=aGkfbS02fn4",
+                    "text": "10వ తరగతి ఛందస్సు వివరణ",
+                    "description": "గురు/లఘు, గణాలు, యతి, ప్రాసల స్పష్ట వివరణ.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/@TeluguOnlineTeaching",
+                    "text": "తెలుగు ఆన్‌లైన్ టీచింగ్ ఛానెల్",
+                    "description": "వ్యాకరణం, అలంకారాలు, మరియు కావ్య నిర్మాణంపై అనుబంధ పాఠాలు.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/channel/UC33AOcpcc52vNEW7xPmeswA",
+                    "text": "తెలుగు ఛందస్సు చానెల్",
+                    "description": "తెలుగు ఛందస్సు మరియు విధి లెసన్‌ల కోసం నిర్దేశిత చానెల్.",
+                    "type": "youtube"
+                }
+            ]
+        },
+        {
+            "id": "tools",
+            "title": "5. సాధనాలు మరియు సాఫ్ట్‌వేర్",
+            "groupIcon": "wrench",
+            "items": [
+                {
+                    "link": "https://chandamu.github.io/",
+                    "text": "Chandam",
+                    "description": "మీటర్ గుర్తింపు మరియు సాధన కోసం ఇంటరాక్టివ్ తెలుగు ప్రోసోడీ విశ్లేషకం.",
+                    "type": "tool"
+                },
+                {
+                    "link": "https://chandamu.github.io/api.html",
+                    "text": "Chandam API పేజీ",
+                    "description": "మీటర్ విశ్లేషణ ప్రవాహాలను సమీకృతం చేయడానికి డెవలపర్ సూచన.",
+                    "type": "tool"
+                },
+                {
+                    "link": "https://play.google.com/store/apps/details?id=chandas.in",
+                    "text": "Chandas Android అప్లికేషన",
+                    "description": "చదువుకోవడానికి మరియు మీటర్ నమూనాలను ధృవీకరించడానికి మొబైల్ ఎంపిక.",
+                    "type": "tool"
+                },
+                {
+                    "link": "https://github.com/mranilkish/chandassu",
+                    "text": "తెలుగు ఛందస్సు గుర్తింపుకారి",
+                    "description": "సరిపోల్చే అన్వేషణ కోసం ఓపెన్-సోర్స్ గుర్తింపుకారి ప్రాజెక్ట్.",
+                    "type": "tool"
+                }
+            ]
+        },
+        {
+            "id": "dictionaries",
+            "title": "6. నిఘంటువులు",
+            "groupIcon": "dictionary",
+            "items": [
+                {
+                    "link": "https://www.andhrabharati.com/dictionary/",
+                    "text": "ఆంధ్ర భారతి నిఘంటువు",
+                    "description": "మెట్రికల్ కవిత్వం రచనలో పదజాల ఖచ్చితత్వానికి ఉపయోగకరమైనది.",
+                    "type": "dictionary"
+                },
+                {
+                    "link": "https://www.shabdkosh.com/dictionary/english-telugu/prosody/prosody-meaning-in-telugu",
+                    "text": "Shabdkosh: Prosody",
+                    "description": "ప్రోసోడీ నిబంధనల కోసం శీఘ్ర ద్విభాషా సెన్స్ చెక్‌లు.",
+                    "type": "dictionary"
+                },
+                {
+                    "link": "https://www.english-telugu.net/english-to-telugu-meaning-prosody",
+                    "text": "English-Telugu Prosody అర్థం",
+                    "description": "సూచికలకు కాంతివంత పదజాల సహాయం.",
+                    "type": "dictionary"
+                }
+            ]
+        },
+        {
+            "id": "communities",
+            "title": "7. కమ్యూనిటీలు",
+            "groupIcon": "people",
+            "items": [
+                {
+                    "link": "https://github.com/miriyald/chandam",
+                    "text": "Chandam GitHub ప్రాజెక్ట్",
+                    "description": "తెలుగు మీటర్ విశ్లేషణ చుట్టూ సోర్స్ కోడ్, సమస్యలు, మరియు సాంకేతిక చర్చ.",
+                    "type": "community"
+                },
+                {
+                    "link": "https://www.facebook.com/search/top?q=%E0%B0%A4%E0%B1%86%E0%B0%B2%E0%B1%81%E0%B0%97%E0%B1%81%20%E0%B0%9B%E0%B0%82%E0%B0%A6%E0%B0%B8%E0%B1%8D%E0%B0%B8%E0%B1%81",
+                    "text": "Facebook శోధన: తెలుగు ఛందస్సు",
+                    "description": "కమ్యూనిటీ గ్రూపులు మరియు నేర్చుకునేవారి చర్చలు.",
+                    "type": "community"
+                },
+                {
+                    "link": "https://www.youtube.com/results?search_query=%E0%B0%A4%E0%B1%86%E0%B0%B2%E0%B1%81%E0%B0%97%E0%B1%81+%E0%B0%9B%E0%B0%82%E0%B0%A6%E0%B0%B8%E0%B1%8D%E0%B0%B8%E0%B1%81",
+                    "text": "YouTube శోధన: తెలుగు ఛందస్సు",
+                    "description": "ఇటీవలి పాఠాలు, ఉపన్యాసాలు, మరియు జనప్రియ చర్చ వీడియోలు.",
+                    "type": "community"
+                }
+            ]
+        },
+        {
+            "id": "research",
+            "title": "8. పరిశోధన",
+            "groupIcon": "microscope",
+            "items": [
+                {
+                    "link": "https://arxiv.org/abs/2510.01233",
+                    "text": "ఛందస్సు నమూనా గుర్తింపు కోసం నవల అల్గోరిథ్‌మ్‌లు",
+                    "description": "తెలుగు మెట్రికల్ నమూనా విశ్లేషణపై ఇటీవలి గణన పని.",
+                    "type": "research"
+                },
+                {
+                    "link": "https://ijsrem.com/download/versemetrics-telugu-chandas-analyzer-with-python/",
+                    "text": "VerseMetrics: తెలుగు Chandas విశ్లేషకం",
+                    "description": "Python-ఆధారిత విశ్లేషణ ప్రవాహం ఉపయోగించిన అనువర్తిత సిస్టమ్-ఫోకస్‌డ్ రచన.",
+                    "type": "research"
+                }
+            ]
+        },
+        {
+            "id": "internal",
+            "title": "9. Chandam అంతర్గత సాధనాలు",
+            "groupIcon": "code",
+            "items": [
+                {
+                    "link": "/rule-sets",
+                    "text": "Rule Sets బ్రౌజ్ చేయండి",
+                    "description": "Chandam లో అందుబాటులో ఉన్న తెలుగు మీటర్ పేర్లను అన్వేషించండి.",
+                    "type": "tool"
+                },
+                {
+                    "link": "/create-rule",
+                    "text": "Custom Rule సృష్టించండి",
+                    "description": "మీ స్వంత మెట్రికల్ పరిమితులను నిర్వచించండి మరియు పరీక్ష చేయండి.",
+                    "type": "tool"
+                }
+            ]
+        }
+    ]
+}

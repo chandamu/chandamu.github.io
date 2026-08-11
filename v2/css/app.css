@@ -1,0 +1,221 @@
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #212529;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 40vh;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Layout */
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    padding: 0 1rem;
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #34495e;
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 900px;
+}
+
+/* Cards and Sections */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Form elements */
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+select {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+}
+
+.options-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.75rem 0;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+}
+
+.btn-primary:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Results */
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.match-percentage {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.match-high { color: #27ae60; }
+.match-medium { color: #f39c12; }
+.match-low { color: #e74c3c; }
+
+.match-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.match-description {
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.mismatches {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #fff3cd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.mismatches ul {
+    margin: 0.25rem 0 0 1.2rem;
+    padding: 0;
+}
+
+/* Scores Table */
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.scores-table th,
+.scores-table td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.scores-table th {
+    background: #f1f3f5;
+    font-weight: 600;
+}
+
+.scores-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Rule selector */
+.rule-selector {
+    margin: 0.75rem 0;
+}
+
+.rule-selector select {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Error */
+.error-message {
+    padding: 0.75rem;
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 4px;
+    margin: 0.75rem 0;
+}
+
+/* Blazor error UI */
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .reload {
+    margin-left: 1rem;
+}

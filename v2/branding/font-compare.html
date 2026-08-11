@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandam — Telugu Font Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;500;600;700;800&family=Hind+Guntur:wght@300;400;500;600;700&family=Mandali&family=NTR&family=Noto+Sans+Telugu:wght@400;500;600;700;800&family=Noto+Serif+Telugu:wght@400;500;600;700;800&family=Peddana&family=Ramaraja&family=Sree+Krushnadevaraya&family=Suranna&family=Timmana&family=Tiro+Telugu:ital@0;1&family=Tenali+Ramakrishna&family=Ramabhadra&family=Dhurjati&family=Chathura:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #faf8f5;
+  color: #1a1a1a;
+  font-family: 'Noto Sans Telugu', sans-serif;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a3a5c;
+}
+
+.subtitle {
+  color: #5c5c5c;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a3a5c;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d4cfc8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #d4cfc8;
+  border-radius: 6px;
+  padding: 1.25rem;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(26, 26, 26, 0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.font-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #1a3a5c;
+  font-family: system-ui, sans-serif;
+}
+
+.font-meta {
+  font-size: 0.7rem;
+  color: #5c5c5c;
+  font-family: system-ui, sans-serif;
+}
+
+.sample-heading {
+  margin-bottom: 0.5rem;
+  color: #1a2744;
+  line-height: 1.3;
+}
+
+.sample-body {
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.sample-poem {
+  color: #1a2744;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  padding: 0.75rem;
+  background: #faf8f5;
+  border-radius: 4px;
+}
+
+.sample-label {
+  font-size: 0.65rem;
+  color: #5c5c5c;
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+
+.combo-section {
+  margin-bottom: 3rem;
+}
+
+.combo-card {
+  background: #fff;
+  border: 1px solid #d4cfc8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.combo-title {
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #b8860b;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.combo-heading {
+  color: #1a2744;
+  margin-bottom: 0.5rem;
+}
+
+.combo-ui {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e8e4de;
+}
+
+.combo-poem {
+  color: #1a2744;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-family: system-ui, sans-serif;
+  background: #f4f1ec;
+  color: #5c5c5c;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+}
+
+.winner { border-color: #b8860b; }
+.winner::before {
+  content: '★';
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  color: #b8860b;
+  font-size: 1rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e8e4de;
+  margin: 3rem 0;
+}
+
+.size-compare {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.size-compare > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.size-sm { font-size: 0.85rem; }
+.size-md { font-size: 1rem; }
+.size-lg { font-size: 1.25rem; }
+.size-xl { font-size: 1.75rem; }
+.size-xxl { font-size: 2.25rem; }
+
+.weight-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+</style>
+</head>
+<body>
+
+<h1>Telugu Font Comparison — Chandam</h1>
+<p class="subtitle">Evaluating Google Fonts for three roles: Headings, UI Body, and Poetry Text. All samples use real Telugu poetry content.</p>
+
+<!-- ============================== -->
+<!-- SECTION 1: HEADING FONTS -->
+<!-- ============================== -->
+<div class="section">
+<h2 class="section-title">1. Heading / Display Fonts</h2>
+<p class="subtitle">Used for: meter names, page titles, section headings. Needs presence and clarity at large sizes.</p>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Noto Sans Telugu 700–800</span>
+    <span class="font-meta">Sans · 9 weights · Variable</span>
+  </div>
+  <div class="sample-heading" style="font-family: 'Noto Sans Telugu'; font-weight: 800; font-size: 2rem;">ఉత్పలమాల</div>
+  <div class="sample-heading" style="font-family: 'Noto Sans Telugu'; font-weight: 700; font-size: 1.5rem;">చంపకమాల · శార్దూల విక్రీడితము</div>
+  <div class="sample-heading" style="font-family: 'Noto Sans Telugu'; font-weight: 600; font-size: 1.2rem;">మత్తేభ విక్రీడితము · సీసము · తేటగీతి</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Noto Serif Telugu 700–800</span>
+    <span class="font-meta">Serif · 9 weights · Variable</span>
+  </div>
+  <div class="sample-heading" style="font-family: 'Noto Serif Telugu'; font-weight: 800; font-size: 2rem;">ఉత్పలమాల</div>
+  <div class="sample-heading" style="font-family: 'Noto Serif Telugu'; font-weight: 700; font-size: 1.5rem;">చంపకమాల · శార్దూల విక్రీడితము</div>
+  <div class="sample-heading" style="font-family: 'Noto Serif Telugu'; font-weight: 600; font-size: 1.2rem;">మత్తేభ విక్రీడితము · సీసము · తేటగీతి</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Anek Telugu 700–800</span>
+    <span class="font-meta">Sans · 8 weights · Variable (width+weight)</span>
+  </div>
+  <div class="sample-heading" style="font-family: 'Anek Telugu'; font-weight: 800; font-size: 2rem;">ఉత్పలమాల</div>
+  <div class="sample-heading" style="font-family: 'Anek Telugu'; font-weight: 700; font-size: 1.5rem;">చంపకమాల · శార్దూల విక్రీడితము</div>
+  <div class="sample-heading" style="font-family: 'Anek Telugu'; font-weight: 600; font-size: 1.2rem;">మత్తేభ విక్రీడితము · సీసము · తేటగీతి</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Timmana</span>
+    <span class="font-meta">Sans · 400 only · Condensed</span>
+  </div>
+  <div class="sample-heading" style="font-family: 'Timmana'; font-size: 2rem;">ఉత్పలమాల</div>
+  <div class="sample-heading" style="font-family: 'Timmana'; font-size: 1.5rem;">చంపకమాల · శార్దూల విక్రీడితము</div>
+  <div class="sample-heading" style="font-family: 'Timmana'; font-size: 1.2rem;">మత్తేభ విక్రీడితము · సీసము · తేటగీతి</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Ramabhadra</span>
+    <span class="font-meta">Sans · 400 only · Geometric</span>
+  </div>
+  <div class="sample-heading" style="font-family: 'Ramabhadra'; font-size: 2rem;">ఉత్పలమాల</div>
+  <div class="sample-heading" style="font-family: 'Ramabhadra'; font-size: 1.5rem;">చంపకమాల · శార్దూల విక్రీడితము</div>
+  <div class="sample-heading" style="font-family: 'Ramabhadra'; font-size: 1.2rem;">మత్తేభ విక్రీడితము · సీసము · తేటగీతి</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Dhurjati</span>
+    <span class="font-meta">Sans · 400 only · Compact bold</span>
+  </div>
+  <div class="sample-heading" style="font-family: 'Dhurjati'; font-size: 2rem;">ఉత్పలమాల</div>
+  <div class="sample-heading" style="font-family: 'Dhurjati'; font-size: 1.5rem;">చంపకమాల · శార్దూల విక్రీడితము</div>
+  <div class="sample-heading" style="font-family: 'Dhurjati'; font-size: 1.2rem;">మత్తేభ విక్రీడితము · సీసము · తేటగీతి</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Chathura 700–800</span>
+    <span class="font-meta">Sans · 5 weights · Geometric/thin</span>
+  </div>
+  <div class="sample-heading" style="font-family: 'Chathura'; font-weight: 800; font-size: 2rem;">ఉత్పలమాల</div>
+  <div class="sample-heading" style="font-family: 'Chathura'; font-weight: 700; font-size: 1.5rem;">చంపకమాల · శార్దూల విక్రీడితము</div>
+  <div class="sample-heading" style="font-family: 'Chathura'; font-weight: 400; font-size: 1.2rem;">మత్తేభ విక్రీడితము · సీసము · తేటగీతి</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 2: BODY / UI FONTS -->
+<!-- ============================== -->
+<div class="section">
+<h2 class="section-title">2. Body / UI Fonts</h2>
+<p class="subtitle">Used for: navigation, labels, buttons, descriptions, tables. Needs clarity at 14–16px with weight variety.</p>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Noto Sans Telugu</span>
+    <span class="font-meta">Sans · 9 weights</span>
+  </div>
+  <div class="sample-label">Navigation (500)</div>
+  <div class="sample-body" style="font-family: 'Noto Sans Telugu'; font-weight: 500;">హోమ్ · నియమాలు · గురించి · సంప్రదింపు</div>
+  <div class="sample-label">Body (400)</div>
+  <div class="sample-body" style="font-family: 'Noto Sans Telugu'; font-weight: 400;">ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి. యతి 10వ అక్షరం వద్ద ఉంటుంది.</div>
+  <div class="sample-label">Label (500, 0.85rem)</div>
+  <div class="sample-body" style="font-family: 'Noto Sans Telugu'; font-weight: 500; font-size: 0.85rem;">గణ విభజన · 3 దోషాలు · 96% సరిపోలిక</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Hind Guntur</span>
+    <span class="font-meta">Sans · 5 weights (300–700)</span>
+  </div>
+  <div class="sample-label">Navigation (500)</div>
+  <div class="sample-body" style="font-family: 'Hind Guntur'; font-weight: 500;">హోమ్ · నియమాలు · గురించి · సంప్రదింపు</div>
+  <div class="sample-label">Body (400)</div>
+  <div class="sample-body" style="font-family: 'Hind Guntur'; font-weight: 400;">ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి. యతి 10వ అక్షరం వద్ద ఉంటుంది.</div>
+  <div class="sample-label">Label (500, 0.85rem)</div>
+  <div class="sample-body" style="font-family: 'Hind Guntur'; font-weight: 500; font-size: 0.85rem;">గణ విభజన · 3 దోషాలు · 96% సరిపోలిక</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Anek Telugu</span>
+    <span class="font-meta">Sans · 8 weights + width axis</span>
+  </div>
+  <div class="sample-label">Navigation (500)</div>
+  <div class="sample-body" style="font-family: 'Anek Telugu'; font-weight: 500;">హోమ్ · నియమాలు · గురించి · సంప్రదింపు</div>
+  <div class="sample-label">Body (400)</div>
+  <div class="sample-body" style="font-family: 'Anek Telugu'; font-weight: 400;">ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి. యతి 10వ అక్షరం వద్ద ఉంటుంది.</div>
+  <div class="sample-label">Label (500, 0.85rem)</div>
+  <div class="sample-body" style="font-family: 'Anek Telugu'; font-weight: 500; font-size: 0.85rem;">గణ విభజన · 3 దోషాలు · 96% సరిపోలిక</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Mandali</span>
+    <span class="font-meta">Sans · 400 only</span>
+  </div>
+  <div class="sample-label">Navigation</div>
+  <div class="sample-body" style="font-family: 'Mandali';">హోమ్ · నియమాలు · గురించి · సంప్రదింపు</div>
+  <div class="sample-label">Body</div>
+  <div class="sample-body" style="font-family: 'Mandali';">ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి. యతి 10వ అక్షరం వద్ద ఉంటుంది.</div>
+  <div class="sample-label">Label (0.85rem)</div>
+  <div class="sample-body" style="font-family: 'Mandali'; font-size: 0.85rem;">గణ విభజన · 3 దోషాలు · 96% సరిపోలిక</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">NTR</span>
+    <span class="font-meta">Sans · 400 only</span>
+  </div>
+  <div class="sample-label">Navigation</div>
+  <div class="sample-body" style="font-family: 'NTR';">హోమ్ · నియమాలు · గురించి · సంప్రదింపు</div>
+  <div class="sample-label">Body</div>
+  <div class="sample-body" style="font-family: 'NTR';">ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి. యతి 10వ అక్షరం వద్ద ఉంటుంది.</div>
+  <div class="sample-label">Label (0.85rem)</div>
+  <div class="sample-body" style="font-family: 'NTR'; font-size: 0.85rem;">గణ విభజన · 3 దోషాలు · 96% సరిపోలిక</div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Noto Serif Telugu 400</span>
+    <span class="font-meta">Serif · 9 weights</span>
+  </div>
+  <div class="sample-label">Navigation (500)</div>
+  <div class="sample-body" style="font-family: 'Noto Serif Telugu'; font-weight: 500;">హోమ్ · నియమాలు · గురించి · సంప్రదింపు</div>
+  <div class="sample-label">Body (400)</div>
+  <div class="sample-body" style="font-family: 'Noto Serif Telugu'; font-weight: 400;">ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి. యతి 10వ అక్షరం వద్ద ఉంటుంది.</div>
+  <div class="sample-label">Label (500, 0.85rem)</div>
+  <div class="sample-body" style="font-family: 'Noto Serif Telugu'; font-weight: 500; font-size: 0.85rem;">గణ విభజన · 3 దోషాలు · 96% సరిపోలిక</div>
+</div>
+
+</div>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 3: POETRY / LITERARY FONTS -->
+<!-- ============================== -->
+<div class="section">
+<h2 class="section-title">3. Poetry / Literary Fonts</h2>
+<p class="subtitle">Used for: poem input, analysis results, verse display. Needs beauty and readability at 1–1.2rem with generous line-height.</p>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Tiro Telugu</span>
+    <span class="font-meta">Serif · 400 + Italic</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Tiro Telugu'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Noto Serif Telugu</span>
+    <span class="font-meta">Serif · 9 weights · Variable</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Noto Serif Telugu'; font-weight: 400; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Suranna</span>
+    <span class="font-meta">Serif · 400 only (current)</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Suranna'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Peddana</span>
+    <span class="font-meta">Serif · 400 only · Calligraphic</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Peddana'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Ramaraja</span>
+    <span class="font-meta">Serif · 400 only · Formal</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Ramaraja'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Sree Krushnadevaraya</span>
+    <span class="font-meta">Serif · 400 only · Classical</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Sree Krushnadevaraya'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Tenali Ramakrishna</span>
+    <span class="font-meta">Sans · 400 only · Light literary</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Tenali Ramakrishna'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-name">Noto Sans Telugu 400</span>
+    <span class="font-meta">Sans · (as poem text)</span>
+  </div>
+  <div class="sample-poem" style="font-family: 'Noto Sans Telugu'; font-weight: 400; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+</div>
+</div>
+
+<hr>
+
+<!-- ============================== -->
+<!-- SECTION 4: RECOMMENDED COMBOS -->
+<!-- ============================== -->
+<div class="section">
+<h2 class="section-title">4. Recommended Combinations</h2>
+<p class="subtitle">Complete pairings showing heading + UI + poetry together. Pick the one that feels right.</p>
+
+<!-- COMBO A -->
+<div class="combo-card">
+  <div class="combo-title">COMBO A: Noto Sans Telugu + Tiro Telugu (current recommendation)</div>
+  <div class="combo-heading" style="font-family: 'Noto Sans Telugu'; font-weight: 700; font-size: 1.75rem;">ఉత్పలమాల — శ్రీనాథుని పద్యం</div>
+  <div class="combo-ui" style="font-family: 'Noto Sans Telugu'; font-weight: 400;">
+    ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి.
+    <span style="font-weight: 500; font-size: 0.85rem; color: #5c5c5c;"> · గణ విభజన · యతి స్థానం: 10</span>
+  </div>
+  <div class="combo-poem" style="font-family: 'Tiro Telugu'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<!-- COMBO B -->
+<div class="combo-card">
+  <div class="combo-title">COMBO B: Noto Sans Telugu + Noto Serif Telugu (all-Noto, maximum weights)</div>
+  <div class="combo-heading" style="font-family: 'Noto Sans Telugu'; font-weight: 700; font-size: 1.75rem;">ఉత్పలమాల — శ్రీనాథుని పద్యం</div>
+  <div class="combo-ui" style="font-family: 'Noto Sans Telugu'; font-weight: 400;">
+    ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి.
+    <span style="font-weight: 500; font-size: 0.85rem; color: #5c5c5c;"> · గణ విభజన · యతి స్థానం: 10</span>
+  </div>
+  <div class="combo-poem" style="font-family: 'Noto Serif Telugu'; font-weight: 400; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<!-- COMBO C -->
+<div class="combo-card">
+  <div class="combo-title">COMBO C: Noto Serif Telugu only (single font, weight contrast)</div>
+  <div class="combo-heading" style="font-family: 'Noto Serif Telugu'; font-weight: 700; font-size: 1.75rem;">ఉత్పలమాల — శ్రీనాథుని పద్యం</div>
+  <div class="combo-ui" style="font-family: 'Noto Serif Telugu'; font-weight: 400;">
+    ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి.
+    <span style="font-weight: 500; font-size: 0.85rem; color: #5c5c5c;"> · గణ విభజన · యతి స్థానం: 10</span>
+  </div>
+  <div class="combo-poem" style="font-family: 'Noto Serif Telugu'; font-weight: 400; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<!-- COMBO D -->
+<div class="combo-card">
+  <div class="combo-title">COMBO D: Anek Telugu + Tiro Telugu (modern geometric + literary serif)</div>
+  <div class="combo-heading" style="font-family: 'Anek Telugu'; font-weight: 700; font-size: 1.75rem;">ఉత్పలమాల — శ్రీనాథుని పద్యం</div>
+  <div class="combo-ui" style="font-family: 'Anek Telugu'; font-weight: 400;">
+    ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి.
+    <span style="font-weight: 500; font-size: 0.85rem; color: #5c5c5c;"> · గణ విభజన · యతి స్థానం: 10</span>
+  </div>
+  <div class="combo-poem" style="font-family: 'Tiro Telugu'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<!-- COMBO E -->
+<div class="combo-card">
+  <div class="combo-title">COMBO E: Hind Guntur + Tiro Telugu (open sans + literary serif)</div>
+  <div class="combo-heading" style="font-family: 'Hind Guntur'; font-weight: 700; font-size: 1.75rem;">ఉత్పలమాల — శ్రీనాథుని పద్యం</div>
+  <div class="combo-ui" style="font-family: 'Hind Guntur'; font-weight: 400;">
+    ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి.
+    <span style="font-weight: 500; font-size: 0.85rem; color: #5c5c5c;"> · గణ విభజన · యతి స్థానం: 10</span>
+  </div>
+  <div class="combo-poem" style="font-family: 'Tiro Telugu'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<!-- COMBO F -->
+<div class="combo-card">
+  <div class="combo-title">COMBO F: Noto Sans Telugu + Peddana (clean UI + palm-leaf calligraphy)</div>
+  <div class="combo-heading" style="font-family: 'Noto Sans Telugu'; font-weight: 700; font-size: 1.75rem;">ఉత్పలమాల — శ్రీనాథుని పద్యం</div>
+  <div class="combo-ui" style="font-family: 'Noto Sans Telugu'; font-weight: 400;">
+    ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి.
+    <span style="font-weight: 500; font-size: 0.85rem; color: #5c5c5c;"> · గణ విభజన · యతి స్థానం: 10</span>
+  </div>
+  <div class="combo-poem" style="font-family: 'Peddana'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+<!-- COMBO G -->
+<div class="combo-card">
+  <div class="combo-title">COMBO G: Noto Sans Telugu + Sree Krushnadevaraya (modern + classical authority)</div>
+  <div class="combo-heading" style="font-family: 'Noto Sans Telugu'; font-weight: 700; font-size: 1.75rem;">ఉత్పలమాల — శ్రీనాథుని పద్యం</div>
+  <div class="combo-ui" style="font-family: 'Noto Sans Telugu'; font-weight: 400;">
+    ఈ పద్యం ఉత్పలమాల ఛందస్సులో ఉంది. ప్రతి పాదంలో 20 అక్షరాలు ఉంటాయి.
+    <span style="font-weight: 500; font-size: 0.85rem; color: #5c5c5c;"> · గణ విభజన · యతి స్థానం: 10</span>
+  </div>
+  <div class="combo-poem" style="font-family: 'Sree Krushnadevaraya'; font-size: 1.1rem;">
+    ఉ. శ్రీనాథుం డనఁగా నొకండు కవికుంజేయుండు భాషాకవి<br>
+    శ్రీనాథుండు మహాకవీశ్వరుఁడు సత్కీర్తిన్ వెలింగించుచున్<br>
+    శ్రీనారాయణ మూర్తి సన్నిధి నిరంజీవించు నీ భారతిన్<br>
+    శ్రీనాథా! కవిసార్వభౌమ! భవదీయ శ్రీపదం సేవయే
+  </div>
+</div>
+
+</div>
+</div>
+
+<hr>
+
+<!-- ============================== -->
+<!-- SECTION 5: QUICK REFERENCE -->
+<!-- ============================== -->
+<div class="section">
+<h2 class="section-title">5. Quick Reference — Font Properties</h2>
+<table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; font-family: system-ui, sans-serif;">
+<thead>
+<tr style="border-bottom: 2px solid #d4cfc8; text-align: left;">
+  <th style="padding: 0.5rem;">Font</th>
+  <th style="padding: 0.5rem;">Type</th>
+  <th style="padding: 0.5rem;">Weights</th>
+  <th style="padding: 0.5rem;">Italic</th>
+  <th style="padding: 0.5rem;">Variable</th>
+  <th style="padding: 0.5rem;">Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Noto Sans Telugu</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">100–900</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Yes</td>
+  <td style="padding: 0.5rem;">UI, headings, labels</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Noto Serif Telugu</td>
+  <td style="padding: 0.5rem;">Serif</td>
+  <td style="padding: 0.5rem;">100–900</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Yes</td>
+  <td style="padding: 0.5rem;">Poetry, headings, body</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Tiro Telugu</td>
+  <td style="padding: 0.5rem;">Serif</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">Yes</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Poetry, literary text</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Anek Telugu</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">100–800</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Yes (wght+wdth)</td>
+  <td style="padding: 0.5rem;">UI, headings, branding</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Hind Guntur</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">300–700</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Body, UI</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Timmana</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Display only</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Suranna</td>
+  <td style="padding: 0.5rem;">Serif</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Poetry (current)</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Peddana</td>
+  <td style="padding: 0.5rem;">Serif</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Poetry, calligraphic</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Sree Krushnadevaraya</td>
+  <td style="padding: 0.5rem;">Serif</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Poetry, classical</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Mandali</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Body, neutral</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">NTR</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">UI, utilitarian</td>
+</tr>
+<tr style="border-bottom: 1px solid #e8e4de;">
+  <td style="padding: 0.5rem; font-weight: 600;">Chathura</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">100,300,400,700,800</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Modern/technical display</td>
+</tr>
+<tr>
+  <td style="padding: 0.5rem; font-weight: 600;">Ramabhadra</td>
+  <td style="padding: 0.5rem;">Sans</td>
+  <td style="padding: 0.5rem;">400</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">No</td>
+  <td style="padding: 0.5rem;">Display, geometric</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>

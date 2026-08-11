@@ -1,0 +1,31 @@
+{
+  "routes": [
+    {
+      "route": "/data/*.gz",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/*",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    }
+  ],
+  "mimeTypes": {
+    ".json": "application/json",
+    ".gz": "application/gzip"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/images/*",
+      "/data/*",
+      "/css/*",
+      "/js/*",
+      "/pages/*",
+      "/_framework/*"
+    ]
+  }
+}

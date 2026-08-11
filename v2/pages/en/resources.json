@@ -1,0 +1,247 @@
+{
+    "groups": [
+        {
+            "id": "intro",
+            "title": "1. Intro and Reliable References",
+            "groupIcon": "help",
+            "items": [
+                {
+                    "link": "https://te.wikipedia.org/wiki/%E0%B0%9B%E0%B0%82%E0%B0%A6%E0%B0%B8%E0%B1%8D%E0%B0%B8%E0%B1%81",
+                    "text": "Chandassu - Telugu Wikipedia",
+                    "description": "Begin with definitions of guru, laghu, gana, yati, prasa, vruttam, and jati.",
+                    "type": "link"
+                },
+                {
+                    "link": "http://sanskrit.sai.uni-heidelberg.de/Chanda/HTML/",
+                    "text": "Sanskrit Encyclopaedia of Prosody",
+                    "description": "Broad reference catalog useful for cross-checking Indic metrical traditions.",
+                    "type": "link"
+                },
+                {
+                    "link": "https://sanskritdocuments.org/telugu/index.html",
+                    "text": "Sanskrit Documents in Telugu Script",
+                    "description": "Classical Sanskrit texts rendered in Telugu script, including prosody-related material.",
+                    "type": "link"
+                }
+            ]
+        },
+        {
+            "id": "books",
+            "title": "2. Books and PDFs",
+            "groupIcon": "book",
+            "items": [
+                {
+                    "link": "https://chandamu.github.io/book.html",
+                    "text": "Chandoratnavali (Digital Book)",
+                    "description": "Practical Telugu metre reference with rules and examples.",
+                    "type": "book"
+                },
+                {
+                    "link": "https://archive.org/details/in.ernet.dli.2015.497287",
+                    "text": "Chando Vyakaranamu (Archive PDF)",
+                    "description": "Traditional source text covering prosody, grammar, and related poetic concepts.",
+                    "type": "book"
+                },
+                {
+                    "link": "https://archive.org/details/chandapadakosham018843mbp",
+                    "text": "Chandah Padakoshamu (Archive)",
+                    "description": "A classic meter-oriented lexical resource used by teachers and researchers.",
+                    "type": "book"
+                },
+                {
+                    "link": null,
+                    "text": "Printed References",
+                    "description": "Kovela Sampathkumaracharya's Chandahpadakosham and standard Telugu grammar guides remain useful in parallel with digital resources.",
+                    "type": "book"
+                }
+            ]
+        },
+        {
+            "id": "libraries",
+            "title": "3. Digital Libraries",
+            "groupIcon": "library",
+            "items": [
+                {
+                    "link": "http://andhrabharati.com/",
+                    "text": "Andhra Bharati",
+                    "description": "Large Telugu literature portal with poetry texts and dictionary resources.",
+                    "type": "link"
+                },
+                {
+                    "link": "http://www.telugubhaghavatam.org/",
+                    "text": "Pothana Bhagavatam",
+                    "description": "Classical padyam source for rhythm and metre observation.",
+                    "type": "link"
+                },
+                {
+                    "link": "https://www.teluguthesis.com/",
+                    "text": "TeluguThesis",
+                    "description": "Digital collection of Telugu and Sanskrit books relevant to literary study.",
+                    "type": "link"
+                },
+                {
+                    "link": "https://sundarayya.org/telugu-uploaded-books",
+                    "text": "Sundarayya Digital Books",
+                    "description": "Open archive of older Telugu texts, useful for historical comparison.",
+                    "type": "link"
+                }
+            ]
+        },
+        {
+            "id": "videos",
+            "title": "4. Video Lessons",
+            "groupIcon": "video",
+            "items": [
+                {
+                    "link": "https://www.youtube.com/playlist?list=PLzg0lqO4Q9DxzAYtpO7u8xQC2_cofaVxk",
+                    "text": "Telugu Chandassu Playlist",
+                    "description": "Progressive lessons from fundamentals to intermediate examples.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/watch?v=IyDAHJ2NILQ",
+                    "text": "Chandassu Part-1",
+                    "description": "Starter lesson for first-time learners.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/watch?v=aGkfbS02fn4",
+                    "text": "Class 10 Chandassu Explanation",
+                    "description": "Clear explanation of guru/laghu, ganas, yati, and prasa.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/@TeluguOnlineTeaching",
+                    "text": "Telugu Online Teaching Channel",
+                    "description": "Supplementary lessons on grammar, alankaras, and poetic structure.",
+                    "type": "youtube"
+                },
+                {
+                    "link": "https://www.youtube.com/channel/UC33AOcpcc52vNEW7xPmeswA",
+                    "text": "Telugu Chandassu Channel",
+                    "description": "Dedicated channel for Telugu prosody and metre lessons.",
+                    "type": "youtube"
+                }
+            ]
+        },
+        {
+            "id": "tools",
+            "title": "5. Tools and Software",
+            "groupIcon": "wrench",
+            "items": [
+                {
+                    "link": "https://chandamu.github.io/",
+                    "text": "Chandam",
+                    "description": "Interactive Telugu prosody analyzer for metre detection and practice.",
+                    "type": "tool"
+                },
+                {
+                    "link": "https://chandamu.github.io/api.html",
+                    "text": "Chandam API Page",
+                    "description": "Developer-facing reference for integrating metre analysis flows.",
+                    "type": "tool"
+                },
+                {
+                    "link": "https://play.google.com/store/apps/details?id=chandas.in",
+                    "text": "Chandas Android App",
+                    "description": "Mobile option for learning and validating meter patterns.",
+                    "type": "tool"
+                },
+                {
+                    "link": "https://github.com/mranilkish/chandassu",
+                    "text": "Telugu Chandassu Recognizer",
+                    "description": "Open-source recognizer project for comparative exploration.",
+                    "type": "tool"
+                }
+            ]
+        },
+        {
+            "id": "dictionaries",
+            "title": "6. Dictionaries",
+            "groupIcon": "dictionary",
+            "items": [
+                {
+                    "link": "https://www.andhrabharati.com/dictionary/",
+                    "text": "Andhra Bharati Dictionary",
+                    "description": "Useful for vocabulary precision when composing metrical verse.",
+                    "type": "dictionary"
+                },
+                {
+                    "link": "https://www.shabdkosh.com/dictionary/english-telugu/prosody/prosody-meaning-in-telugu",
+                    "text": "Shabdkosh: Prosody",
+                    "description": "Quick bilingual sense checks for prosody terms.",
+                    "type": "dictionary"
+                },
+                {
+                    "link": "https://www.english-telugu.net/english-to-telugu-meaning-prosody",
+                    "text": "English-Telugu Prosody Meaning",
+                    "description": "Lightweight lexical support for beginners.",
+                    "type": "dictionary"
+                }
+            ]
+        },
+        {
+            "id": "communities",
+            "title": "7. Communities",
+            "groupIcon": "people",
+            "items": [
+                {
+                    "link": "https://github.com/miriyald/chandam",
+                    "text": "Chandam GitHub Project",
+                    "description": "Source code, issues, and technical discussion around Telugu meter analysis.",
+                    "type": "community"
+                },
+                {
+                    "link": "https://www.facebook.com/search/top?q=%E0%B0%A4%E0%B1%86%E0%B0%B2%E0%B1%81%E0%B0%97%E0%B1%81%20%E0%B0%9B%E0%B0%82%E0%B0%A6%E0%B0%B8%E0%B1%8D%E0%B0%B8%E0%B1%81",
+                    "text": "Facebook Search: Telugu Chandassu",
+                    "description": "Community groups and learner discussions.",
+                    "type": "community"
+                },
+                {
+                    "link": "https://www.youtube.com/results?search_query=%E0%B0%A4%E0%B1%86%E0%B0%B2%E0%B1%81%E0%B0%97%E0%B1%81+%E0%B0%9B%E0%B0%82%E0%B0%A6%E0%B0%B8%E0%B1%8D%E0%B0%B8%E0%B1%81",
+                    "text": "YouTube Search: Telugu Chandassu",
+                    "description": "Recent lessons, lectures, and public discussion videos.",
+                    "type": "community"
+                }
+            ]
+        },
+        {
+            "id": "research",
+            "title": "8. Research",
+            "groupIcon": "microscope",
+            "items": [
+                {
+                    "link": "https://arxiv.org/abs/2510.01233",
+                    "text": "Novel Algorithms for Chandassu Pattern Recognition",
+                    "description": "Recent computational work on Telugu metrical pattern analysis.",
+                    "type": "research"
+                },
+                {
+                    "link": "https://ijsrem.com/download/versemetrics-telugu-chandas-analyzer-with-python/",
+                    "text": "VerseMetrics: Telugu Chandas Analyzer",
+                    "description": "Applied system-focused write-up using Python-based analysis flow.",
+                    "type": "research"
+                }
+            ]
+        },
+        {
+            "id": "internal",
+            "title": "9. Chandam Internal Tools",
+            "groupIcon": "code",
+            "items": [
+                {
+                    "link": "/rule-sets",
+                    "text": "Browse Rule Sets",
+                    "description": "Explore Telugu metre specifications available in Chandam.",
+                    "type": "tool"
+                },
+                {
+                    "link": "/create-rule",
+                    "text": "Create a Custom Rule",
+                    "description": "Define and test your own metrical constraints.",
+                    "type": "tool"
+                }
+            ]
+        }
+    ]
+}

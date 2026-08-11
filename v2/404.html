@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chandam - Telugu Poetry Meter Analysis</title>
+    <base href="/v2/" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="apple-touch-icon" href="images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;500;600;700;800&family=Tiro+Telugu:ital@0;1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet" />
+    <link href="css/chandam.css" rel="stylesheet" />
+
+    <!-- Google Analytics 4 -->
+    <!-- SINGLE SOURCE OF TRUTH: GA4_MEASUREMENT_ID is defined once and reused -->
+    <script>
+        // GA4 Measurement ID - SINGLE SOURCE OF TRUTH
+        window.GA4_MEASUREMENT_ID = 'G-50E1EGRJF1';
+    </script>
+    <script>
+        // Skip loading GA script on localhost/dev loopback hosts.
+        (function () {
+            var host = window.location.hostname;
+            var isLocalhost = host === 'localhost' || host === '127.0.0.1' || host === '::1';
+            if (isLocalhost) {
+                return;
+            }
+
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA4_MEASUREMENT_ID;
+            document.head.appendChild(script);
+
+            // Initialize gtag
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', window.GA4_MEASUREMENT_ID, {
+                anonymize_ip: true,
+                send_page_view: false  // We handle page views manually for SPA
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <a href="#content" class="skip-link">Skip to content</a>
+    <header>
+        <div class="container">
+            <h1><a href=".">ఛందం</a></h1>
+            <nav id="main-nav">
+                <a href="rule-sets" data-i18n="nav_rule_sets">Rule Sets</a>
+                <a href="resources" data-i18n="nav_resources">Resources</a>
+                <a href="about" data-i18n="nav_about">About</a>
+                <a href="credits" data-i18n="nav_credits">Credits</a>
+                <a href="my-data" data-i18n="nav_my_data">My Data</a>
+                <button id="kb-toggle" class="kb-toggle active" title="Telugu Keyboard / తెలుగు కీబోర్డు"
+                    aria-label="Toggle Telugu keyboard" aria-pressed="true">
+                    <svg viewBox="0 0 32 32" width="28" height="28">
+                        <rect width="32" height="32" rx="6" ry="6" fill="#1a3a5c"/>
+                        <text x="16" y="23" font-family="'Tiro Telugu', sans-serif" font-size="18"
+                              font-weight="800" fill="#f5f3f0" text-anchor="middle">తె</text>
+                    </svg>
+                </button>
+            </nav>
+            <button id="lang-toggle" class="lang-toggle" title="Switch language / భాష మార్చండి"
+                aria-label="Switch interface language">
+                <span class="lang-current">EN</span>
+            </button>
+            <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+    </header>
+
+    <main id="content">
+        <div id="initial-loader">
+            <div class="loader-container" aria-label="Loading Chandam...">
+                <svg class="loader-svg" viewBox="0 0 128 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle class="loader-circle" cx="24" cy="24" r="7" fill="#1a3a5c"/>
+                    <circle class="loader-circle" cx="48" cy="24" r="10" fill="#b8860b"/>
+                    <circle class="loader-circle" cx="72" cy="24" r="7" fill="#1a3a5c"/>
+                    <circle class="loader-circle" cx="96" cy="24" r="10" fill="#b8860b"/>
+                </svg>
+                <p class="loader-fallback" style="display:none;" data-i18n="loading">Loading...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">ఛందం©</span>
+                <span class="footer-tagline">ఛందం© తో పద్య సాహిత్యం మరింత రసమయం..!!</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-link-group">
+                    <a href="resources" data-i18n="nav_resources">Resources</a>
+                    <a href="about" data-i18n="nav_about">About</a>
+                    <a href="contact" data-i18n="nav_contact">Contact</a>
+                    <a href="https://github.com/miriyald/chandam" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+                <span class="footer-separator" aria-hidden="true">|</span>
+                <div class="footer-link-group">
+                    <a href="my-writings" data-i18n="nav_my_writings">My Writings</a>
+                    <a href="learn/custom-fav/" data-i18n="footer_favorites">Favorites</a>
+                    <a href="learn/custom-rules/" data-i18n="footer_custom_rules">Custom Rules</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <span id="version-info">v0.0.0 (dev)</span>
+                <span class="footer-dot" aria-hidden="true">&middot;</span>
+                <span id="build-date-info"></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Blazor bootstrap container -->
+    <div id="app" style="display: none;"></div>
+
+    <!-- Blazor WASM runtime -->
+    <script src="_framework/blazor.webassembly.js"></script>
+
+    <!-- TypeScript app bundle -->
+    <script type="module" src="js/chandam-app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<h2>వనరులు</h2>
+<p>
+    తెలుగు ఛందస్సు అభ్యాసం కోసం ఎంపిక చేసిన సూచనలు: ప్రాథమిక సమాచారం, గ్రంథాలు, వీడియోలు, సాధనాలు,
+    పరిశోధన, మరియు కమ్యూనిటీలు.
+</p>
+
+<div class="resources-page">
+    <section class="resources-hero" aria-label="వనరుల అవలోకనం">
+        <h3>తెలుగు ఛందస్సు అధ్యయన కేంద్రం</h3>
+        <p>
+            ఈ పేజీని సాధన దృష్టితో అమర్చాం: ముందుగా ప్రాథమిక అంశాలు, తరువాత గ్రంథాలు మరియు ఉదాహరణలు,
+            ఆపై సాధనాల ద్వారా నియమిత అభ్యాసం.
+        </p>
+        <p class="resources-meta">నవీకరణ: మే 2026</p>
+    </section>
+
+    <nav id="resources-nav" class="resources-index" aria-label="విభాగాల సూచిక"></nav>
+
+    <div id="resources-content"></div>
+
+    <p class="resources-note">
+        గమనిక: బాహ్య లింకులు కాలక్రమేణా మారవచ్చు. లింక్ విచ్ఛిన్నమైతే, వనరును కనుగొనడానికి అదే సైట్ శోధనను ఉపయోగించండి.
+    </p>
+</div>
+
+<style>
+    .resources-page {
+        margin-top: var(--space-lg);
+    }
+
+    .resources-hero {
+        padding: var(--space-lg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, rgba(26, 58, 92, 0.07), rgba(184, 134, 11, 0.07));
+        margin-bottom: var(--space-lg);
+    }
+
+    .resources-hero h3 {
+        margin-top: 0;
+        margin-bottom: var(--space-sm);
+        color: var(--color-primary);
+    }
+
+    .resources-meta {
+        margin: 0;
+        color: var(--color-text-muted);
+        font-size: 0.95rem;
+    }
+
+    .resources-index {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: var(--space-sm);
+        margin-bottom: var(--space-xl);
+        padding: var(--space-md);
+        border: 1px solid var(--color-divider);
+        border-radius: var(--radius-md);
+        background: var(--color-surface);
+    }
+
+    .resources-index a {
+        display: block;
+        padding: var(--space-sm);
+        border-radius: var(--radius-sm);
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .resources-index a:hover,
+    .resources-index a:focus {
+        background: rgba(26, 58, 92, 0.08);
+    }
+
+    .resources-note {
+        margin: var(--space-xl) 0 0 0;
+        padding: var(--space-md);
+        border-left: 4px solid var(--color-accent-gold);
+        background: var(--color-surface);
+        border-radius: var(--radius-sm);
+        color: var(--color-text-muted);
+    }
+
+    @media (max-width: 768px) {
+        .resources-index {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chandam — App Walkthrough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;500;600;700;800&family=Tiro+Telugu:ital@0;1&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --bg: #faf8f5;
+      --dark: #1a1a1a;
+      --dark-text: #f5f3f0;
+      --primary: #1a3a5c;
+      --gold: #b8860b;
+      --gold-light: #d4a843;
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --border: #d4cfc8;
+      --surface: #f4f1ec;
+      --font-ui: 'Anek Telugu', sans-serif;
+      --font-editor: 'Tiro Telugu', serif;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--dark);
+      font-family: var(--font-ui);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #presentation {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* --- Slides --- */
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 150ms ease-out, transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(4%);
+      padding: 48px 64px;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+      z-index: 1;
+    }
+
+    .slide.exit {
+      opacity: 0;
+      transform: translateX(-2%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slide {
+        transition: opacity 80ms linear;
+        transform: none !important;
+      }
+
+      .slide.exit {
+        transform: none !important;
+      }
+    }
+
+    /* --- Title Slide --- */
+    .slide-title {
+      background: var(--dark);
+      color: var(--dark-text);
+      text-align: center;
+      gap: 16px;
+    }
+
+    .slide-title .logo {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--gold);
+    }
+
+    .slide-title .subtitle {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 400;
+      color: var(--dark-text);
+      opacity: 0.9;
+    }
+
+    .slide-title .tagline {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .slide-title .url {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      margin-top: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    /* --- Chapter Slides --- */
+    .slide-chapter {
+      background: var(--dark);
+      color: var(--dark-text);
+      text-align: center;
+      gap: 12px;
+    }
+
+    .slide-chapter .story-number {
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    .slide-chapter .chapter-title {
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .slide-chapter .chapter-quote {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 8px;
+      max-width: 50ch;
+    }
+
+    /* --- Content Slides --- */
+    .slide-content {
+      background: var(--bg);
+      color: var(--text);
+      gap: 20px;
+      padding: 32px 48px;
+    }
+
+    .slide-content .screenshot {
+      max-width: 85vw;
+      max-height: 68vh;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(26, 26, 26, 0.08);
+    }
+
+    .slide-content .screenshot.element-crop {
+      max-width: 70vw;
+      max-height: 40vh;
+      border-radius: 4px;
+      background: var(--surface);
+      padding: 12px;
+    }
+
+    .slide-content .screenshot.mobile-frame {
+      max-width: 40vw;
+      max-height: 72vh;
+      border-radius: 28px;
+      border: 2px solid var(--border);
+    }
+
+    .slide-content .caption {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--text);
+      text-align: center;
+      max-width: 65ch;
+    }
+
+    .slide-content .caption .meter-name {
+      font-family: var(--font-editor);
+      font-weight: 400;
+    }
+
+    /* --- Progress Bar --- */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(26, 26, 26, 0.1);
+      z-index: 100;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gold);
+      transition: width 250ms ease-out;
+      width: 0%;
+    }
+
+    /* --- Chapter Nav --- */
+    .chapter-nav {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+      align-items: center;
+    }
+
+    .chapter-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all 200ms ease-out;
+      position: relative;
+    }
+
+    .chapter-dot:hover {
+      border-color: var(--gold-light);
+      transform: scale(1.3);
+    }
+
+    .chapter-dot.active {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .chapter-dot::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 4px 8px;
+      background: var(--dark);
+      color: var(--dark-text);
+      font-size: 0.75rem;
+      white-space: nowrap;
+      border-radius: 3px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 150ms;
+      margin-bottom: 6px;
+    }
+
+    .chapter-dot:hover::after {
+      opacity: 1;
+    }
+
+    /* --- Slide Counter --- */
+    .slide-counter {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      z-index: 100;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* --- Fullscreen Button --- */
+    .fullscreen-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 80px;
+      width: 28px;
+      height: 28px;
+      background: none;
+      border: 1px solid var(--muted);
+      border-radius: 4px;
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      transition: border-color 150ms, color 150ms;
+    }
+
+    .fullscreen-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .fullscreen-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* --- Nav Hint --- */
+    .nav-hint {
+      position: fixed;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      color: var(--muted);
+      z-index: 100;
+      transition: opacity 1s ease-out;
+      text-align: center;
+    }
+
+    .nav-hint.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* --- Overview Mode --- */
+    .overview-grid {
+      position: fixed;
+      inset: 0;
+      background: var(--dark);
+      z-index: 200;
+      display: none;
+      overflow-y: auto;
+      padding: 32px;
+    }
+
+    .overview-grid.visible {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      align-content: start;
+    }
+
+    .overview-thumb {
+      aspect-ratio: 16/9;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      background: var(--surface);
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      transition: border-color 150ms;
+      position: relative;
+    }
+
+    .overview-thumb:hover {
+      border-color: var(--gold-light);
+    }
+
+    .overview-thumb.current {
+      border-color: var(--gold);
+    }
+
+    .overview-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .overview-thumb .thumb-label {
+      position: absolute;
+      bottom: 4px;
+      right: 6px;
+      font-size: 0.65rem;
+      color: var(--muted);
+      background: rgba(250, 248, 245, 0.85);
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+
+    .overview-thumb.dark-thumb {
+      background: var(--dark);
+    }
+
+    .overview-thumb.dark-thumb .thumb-label {
+      color: var(--dark-text);
+      background: rgba(26, 26, 26, 0.85);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .slide {
+        padding: 24px 20px;
+      }
+
+      .slide-content .screenshot {
+        max-width: 92vw;
+        max-height: 60vh;
+      }
+
+      .slide-content .screenshot.mobile-frame {
+        max-width: 70vw;
+      }
+
+      .slide-content .caption {
+        font-size: 1.1rem;
+      }
+
+      .chapter-nav {
+        bottom: 16px;
+        left: 16px;
+        gap: 8px;
+      }
+
+      .slide-counter {
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .fullscreen-btn {
+        bottom: 16px;
+        right: 60px;
+      }
+
+      .nav-hint {
+        bottom: 48px;
+      }
+    }
+
+    @media (max-aspect-ratio: 4/3) {
+      .slide-content .screenshot {
+        max-height: 55vh;
+      }
+
+      .slide-content .screenshot.mobile-frame {
+        max-height: 60vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="presentation">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <nav class="chapter-nav">
+      <div class="chapter-dot active" data-slide="0" data-tooltip="శీర్షిక"></div>
+      <div class="chapter-dot" data-slide="1" data-tooltip="పరిచయం"></div>
+      <div class="chapter-dot" data-slide="11" data-tooltip="లోతైన విశ్లేషణ"></div>
+      <div class="chapter-dot" data-slide="19" data-tooltip="ఇష్టాలు"></div>
+      <div class="chapter-dot" data-slide="25" data-tooltip="స్వీయ నియమాలు"></div>
+      <div class="chapter-dot" data-slide="31" data-tooltip="GitHub"></div>
+      <div class="chapter-dot" data-slide="33" data-tooltip="మొబైల్"></div>
+      <div class="chapter-dot" data-slide="39" data-tooltip="గ్రంథ ఎగుమతి"></div>
+    </nav>
+
+    <div class="slide-counter" id="counter">1 / 42</div>
+
+    <button class="fullscreen-btn" id="fs-btn" aria-label="Toggle fullscreen">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+      </svg>
+    </button>
+
+    <div class="nav-hint" id="nav-hint">← → కదలిక | Space తదుపరి | F పూర్తి తెర | O సమగ్ర వీక్షణ</div>
+
+    <div class="slides">
+      <!-- 0: Title -->
+      <section class="slide slide-title active">
+        <div class="logo">ఛందం</div>
+        <div class="subtitle">తెలుగు పద్య ఛందస్సు విశ్లేషణ</div>
+        <div class="tagline">7 వినియోగ కథలు</div>
+        <div class="url">chandamu.github.io</div>
+      </section>
+
+      <!-- Story 1: First-Time Discovery -->
+      <section class="slide slide-chapter" data-chapter="1">
+        <div class="story-number">కథ 1</div>
+        <div class="chapter-title">మొదటి పరిచయం</div>
+        <div class="chapter-quote">"ఇప్పుడే ఈ యాప్ చూశాను. ఇది ఏమి చేస్తుంది?"</div>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/01-home-page.png" alt="ముఖ్య పేజీ" loading="lazy">
+        <p class="caption">హీరో విభాగం మరియు వేగవంతమైన లింక్ కార్డులతో ముఖ పేజీ</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/02-about-page.png" alt="గురించి పేజీ" loading="lazy">
+        <p class="caption">తెలుగు ఛందస్సు మరియు యాప్ ప్రయోజనం గురించి వివరణ</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/03-rule-sets.png" alt="నియమ సమూహాల పేజీ"
+          loading="lazy">
+        <p class="caption">అందుబాటులో ఉన్న ఛందస్సు సమూహాలను కార్డుల రూపంలో చూపిస్తుంది</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/04-learn-chandam.png" alt="అభ్యాస సూచిక"
+          loading="lazy">
+        <p class="caption">వర్గాల వారీగా అన్ని తెలుగు ఛందస్సుల జాబితా</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/05-filter-active.png" alt="ఫిల్టర్ సక్రియం"
+          loading="lazy">
+        <p class="caption">వెతికిన వెంటనే నియమాల జాబితా కుదించబడుతుంది</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/06-learn-detail.png" alt="ఛందస్సు వివరాలు"
+          loading="lazy">
+        <p class="caption">గణ రూపం, ఉదాహరణలు, మరియు "ప్రయత్నించండి" బటన్‌తో వివర పేజీ</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot element-crop" src="screenshots/story-1-discovery/07-breadcrumbs.png"
+          alt="నావిగేషన్ మార్గం" loading="lazy">
+        <p class="caption">నావిగేషన్ మార్గం వల్ల వాడుకరికి స్థాన అవగాహన ఉంటుంది</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/08-compute-prefilled.png"
+          alt="ముందుగా నింపిన విశ్లేషణ పేజీ" loading="lazy">
+        <p class="caption">"ఉదాహరణ ప్రయత్నించండి" ద్వారా పద్యం స్వయంచాలకంగా ఎడిటర్‌లో నింపబడుతుంది</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="1">
+        <img class="screenshot" src="screenshots/story-1-discovery/09-results-100-percent.png" alt="100% సరిపోలిక"
+          loading="lazy">
+        <p class="caption">పచ్చ సూచికతో 100% సరిపోలిక మరియు గణ విభజన — పూర్తి సరిపోలిక వచ్చినప్పుడు "GitHub కి
+          సమర్పించండి" ఎంపిక అందుబాటులోకి వస్తుంది</p>
+      </section>
+
+      <!-- Story 2: Power User Analysis -->
+      <section class="slide slide-chapter" data-chapter="2">
+        <div class="story-number">కథ 2</div>
+        <div class="chapter-title">లోతైన విశ్లేషణ</div>
+        <div class="chapter-quote">"నా పద్యాన్ని వివిధ నియమ సమూహాలలో పరిశీలించాలి"</div>
+      </section>
+
+      <section class="slide slide-content" data-chapter="2">
+        <img class="screenshot" src="screenshots/story-2-power-user/01-auto-detect-mode.png" alt="Auto-detect mode"
+          loading="lazy">
+        <p class="caption">ఆటో-గుర్తింపు ఆన్‌లో ఉన్న విశ్లేషణ పేజీ</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="2">
+        <img class="screenshot" src="screenshots/story-2-power-user/02-random-loaded.png" alt="Random poem loaded"
+          loading="lazy">
+        <p class="caption">"యాదృచ్ఛికం" నొక్కితే నమూనా తెలుగు పద్యం ఎడిటర్‌లో నింపబడుతుంది</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="2">
+        <img class="screenshot" src="screenshots/story-2-power-user/03-results-cards.png" alt="Results cards"
+          loading="lazy">
+        <p class="caption">స్కోర్ ఆధారంగా క్రమబద్ధీకరించిన బహుళ సరిపోలిక కార్డులు</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="2">
+        <img class="screenshot" src="screenshots/story-2-power-user/04-rule-picker-open.png" alt="Rule picker open"
+          loading="lazy">
+        <p class="caption">మాన్యువల్ మోడ్‌లో నిర్దిష్ట ఛందస్సు కోసం నియమ ఎంపిక</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="2">
+        <img class="screenshot" src="screenshots/story-2-power-user/05-manual-mode-results.png"
+          alt="Manual mode results" loading="lazy">
+        <p class="caption">ప్రతి పాదానికి గణ విభజనతో నిర్దిష్ట నియమ విశ్లేషణ</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="2">
+        <img class="screenshot" src="screenshots/story-2-power-user/06-partial-match-errors.png" alt="Partial match"
+          loading="lazy">
+        <p class="caption">అసమానతలను చూపించే లోప సూచనలతో పాక్షిక సరిపోలిక</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="2">
+        <img class="screenshot element-crop" src="screenshots/story-2-power-user/07-yati-prasa-options.png"
+          alt="Yati Prasa options" loading="lazy">
+        <p class="caption">లోతైన విశ్లేషణ కోసం <span class="meter-name">యతి</span> మరియు <span
+            class="meter-name">ప్రాస</span> టాగిల్ ఎంపికలు</p>
+      </section>
+
+      <!-- Story 3: Curating Favorites -->
+      <section class="slide slide-chapter" data-chapter="3">
+        <div class="story-number">కథ 3</div>
+        <div class="chapter-title">ఇష్ట ఛందస్సుల సేకరణ</div>
+        <div class="chapter-quote">"నాకు అవసరమైన నియమాలను బుక్‌మార్క్‌గా ఉంచాలి"</div>
+      </section>
+
+      <section class="slide slide-content" data-chapter="3">
+        <img class="screenshot" src="screenshots/story-3-favorites/01-heart-unfavorited.png" alt="Heart unfavorited"
+          loading="lazy">
+        <p class="caption">ఇష్టాలలో చేరని స్థితిలో హృదయ చిహ్నం</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="3">
+        <img class="screenshot" src="screenshots/story-3-favorites/02-heart-favorited.png" alt="Heart favorited"
+          loading="lazy">
+        <p class="caption">ఒక్క క్లిక్‌తో ఇష్టాలలో చేరుతుంది. వెంటనే IndexedDBలో నిల్వ అవుతుంది.</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="3">
+        <img class="screenshot" src="screenshots/story-3-favorites/03-favorites-card.png" alt="Favorites card"
+          loading="lazy">
+        <p class="caption">నియమ సమూహాల పేజీలో "ఇష్టాలు" కార్డు కనిపిస్తుంది</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="3">
+        <img class="screenshot" src="screenshots/story-3-favorites/04-custom-fav-list.png" alt="Custom fav list"
+          loading="lazy">
+        <p class="caption">బుక్‌మార్క్ చేసిన అన్ని ఛందస్సులు ఇష్టాల జాబితాలో కనిపిస్తాయి</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="3">
+        <img class="screenshot" src="screenshots/story-3-favorites/05-favorites-removed.png" alt="Favorites removed"
+          loading="lazy">
+        <p class="caption">అన్ని ఇష్టాలు తొలగితే కార్డు కూడా కనిపించదు</p>
+      </section>
+
+      <!-- Story 4: Custom Rule Authoring -->
+      <section class="slide slide-chapter" data-chapter="4">
+        <div class="story-number">కథ 4</div>
+        <div class="chapter-title">స్వీయ నియమ రచన</div>
+        <div class="chapter-quote">"నాకు ఛందస్సు తెలుసు. నా స్వంత నియమాన్ని రూపొందించాలి."</div>
+      </section>
+
+      <section class="slide slide-content" data-chapter="4">
+        <img class="screenshot" src="screenshots/story-4-custom-rules/01-create-rule-form.png" alt="Create rule form"
+          loading="lazy">
+        <p class="caption">ఇన్‌లైన్ ప్యాటర్న్ బిల్డర్‌తో నియమ సృష్టి ఫారం</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="4">
+        <img class="screenshot" src="screenshots/story-4-custom-rules/02-rule-filled.png" alt="Rule filled"
+          loading="lazy">
+        <p class="caption">నియమ పేరు మరియు గణ నమూనాలు నమోదు చేసిన స్థితి</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="4">
+        <img class="screenshot" src="screenshots/story-4-custom-rules/03-after-creation.png" alt="After creation"
+          loading="lazy">
+        <p class="caption">నియమం IndexedDBలో భద్రపరచబడినట్లు నిర్ధారణ</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="4">
+        <img class="screenshot" src="screenshots/story-4-custom-rules/04-custom-rules-card.png" alt="Custom rules card"
+          loading="lazy">
+        <p class="caption">నియమ సమూహాల పేజీలో "స్వీయ నియమాలు" కార్డు</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="4">
+        <img class="screenshot" src="screenshots/story-4-custom-rules/05-compute-custom-rule.png"
+          alt="Compute custom rule" loading="lazy">
+        <p class="caption">స్వయంగా నిర్వచించిన ఛందస్సులపైనా విశ్లేషణ సక్రియంగా పనిచేస్తుంది</p>
+      </section>
+
+      <!-- Story 5: Community Contribution -->
+      <section class="slide slide-chapter" data-chapter="5">
+        <div class="story-number">కథ 5</div>
+        <div class="chapter-title">సముదాయానికి భాగస్వామ్యం</div>
+        <div class="chapter-quote">"నాకు మంచి ఉదాహరణ దొరికింది. దాన్ని పంచుకుంటాను."</div>
+      </section>
+
+      <section class="slide slide-content" data-chapter="5">
+        <img class="screenshot" src="screenshots/story-5-github/01-perfect-match-submit.png" alt="Perfect match submit"
+          loading="lazy">
+        <p class="caption">100% సరిపోలికతో GitHub సమర్పణ బటన్ అందుబాటులోకి వస్తుంది</p>
+      </section>
+
+      <!-- Story 6: Mobile Experience -->
+      <section class="slide slide-chapter" data-chapter="6">
+        <div class="story-number">కథ 6</div>
+        <div class="chapter-title">మొబైల్ అనుభవం</div>
+        <div class="chapter-quote">"నా ఫోన్‌లో ఈ యాప్‌ను ఉపయోగించడం"</div>
+      </section>
+
+      <section class="slide slide-content" data-chapter="6">
+        <img class="screenshot mobile-frame" src="screenshots/story-6-mobile/01-mobile-home.png" alt="Mobile home"
+          loading="lazy">
+        <p class="caption">మొబైల్‌లో సరిగ్గా సరిపడే ముఖ పేజీ</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="6">
+        <img class="screenshot mobile-frame" src="screenshots/story-6-mobile/02-hamburger-open.png" alt="Hamburger open"
+          loading="lazy">
+        <p class="caption">హాంబర్గర్ మెనూ విస్తరించిన స్థితి</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="6">
+        <img class="screenshot mobile-frame" src="screenshots/story-6-mobile/03-mobile-compute.png" alt="Mobile compute"
+          loading="lazy">
+        <p class="caption">చిన్న తెరపై పూర్తి వెడల్పుతో ఎడిటర్</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="6">
+        <img class="screenshot mobile-frame" src="screenshots/story-6-mobile/04-mobile-results.png" alt="Mobile results"
+          loading="lazy">
+        <p class="caption">సరిపోలిక కార్డులు తెర పరిమాణానికి అనుగుణంగా క్రమబద్ధంగా వరుసపడతాయి</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="6">
+        <img class="screenshot mobile-frame" src="screenshots/story-6-mobile/05-mobile-favorites.png"
+          alt="Mobile favorites" loading="lazy">
+        <p class="caption">మొబైల్‌లో కూడా ఇష్టాల హృదయ బటన్ సులభంగా ఉపయోగించవచ్చు</p>
+      </section>
+
+      <!-- Story 7: Export as Book -->
+      <section class="slide slide-chapter" data-chapter="7">
+        <div class="story-number">కథ 7</div>
+        <div class="chapter-title">గ్రంథంగా ఎగుమతి</div>
+        <div class="chapter-quote">"అన్ని ఛందస్సుల ముద్రణకు అనుకూల సూచిక కావాలి"</div>
+      </section>
+
+      <section class="slide slide-content" data-chapter="7">
+        <img class="screenshot" src="screenshots/story-7-export-book/01-export-button-on-index.png"
+          alt="Export button on index" loading="lazy">
+        <p class="caption">ఫిల్టర్ పట్టీలోని "గ్రంథంగా ఎగుమతి" బటన్ HTML పుస్తకాన్ని సృష్టిస్తుంది</p>
+      </section>
+
+      <section class="slide slide-content" data-chapter="7">
+        <img class="screenshot" src="screenshots/story-7-export-book/03-single-rule-export-button.png"
+          alt="Single rule export" loading="lazy">
+        <p class="caption">ప్రతి నియమాన్ని పూర్తి సమాచారం మరియు ఉదాహరణలతో వేరుగా కూడా ఎగుమతి చేయవచ్చు</p>
+      </section>
+    </div>
+
+    <!-- Overview Grid -->
+    <div class="overview-grid" id="overview"></div>
+  </div>
+
+  <script>
+    (function () {
+      const slides = document.querySelectorAll('.slide');
+      const total = slides.length;
+      let current = 0;
+      let hintDismissed = false;
+
+      const progress = document.getElementById('progress');
+      const counter = document.getElementById('counter');
+      const navHint = document.getElementById('nav-hint');
+      const overview = document.getElementById('overview');
+      const dots = document.querySelectorAll('.chapter-dot');
+      const fsBtn = document.getElementById('fs-btn');
+
+      const chapters = [0, 1, 11, 19, 25, 31, 33, 39];
+
+      function updateUI() {
+        progress.style.width = ((current / (total - 1)) * 100) + '%';
+        counter.textContent = (current + 1) + ' / ' + total;
+
+        let activeChapter = 0;
+        for (let i = chapters.length - 1; i >= 0; i--) {
+          if (current >= chapters[i]) { activeChapter = i; break; }
+        }
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === activeChapter);
+        });
+      }
+
+      function goTo(index) {
+        if (index < 0 || index >= total || index === current) return;
+        if (!hintDismissed) { navHint.classList.add('hidden'); hintDismissed = true; }
+
+        slides[current].classList.remove('active');
+        slides[current].classList.add('exit');
+
+        setTimeout(function () { slides[current === index ? current : current].classList.remove('exit'); }, 300);
+
+        var prev = current;
+        current = index;
+        slides[current].classList.add('active');
+        updateUI();
+
+        setTimeout(function () { slides[prev].classList.remove('exit'); }, 300);
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      // Keyboard
+      document.addEventListener('keydown', function (e) {
+        if (overview.classList.contains('visible')) {
+          if (e.key === 'Escape' || e.key === 'o' || e.key === 'O' || e.key === 'g' || e.key === 'G') {
+            toggleOverview();
+            e.preventDefault();
+          }
+          return;
+        }
+
+        switch (e.key) {
+          case 'ArrowRight': case ' ': case 'Enter': next(); e.preventDefault(); break;
+          case 'ArrowLeft': case 'Backspace': prev(); e.preventDefault(); break;
+          case 'Home': goTo(0); e.preventDefault(); break;
+          case 'End': goTo(total - 1); e.preventDefault(); break;
+          case 'f': case 'F': toggleFullscreen(); e.preventDefault(); break;
+          case 'o': case 'O': case 'g': case 'G': toggleOverview(); e.preventDefault(); break;
+          case 'Escape':
+            if (document.fullscreenElement) document.exitFullscreen();
+            e.preventDefault();
+            break;
+          default:
+            if (e.key >= '1' && e.key <= '7') {
+              goTo(chapters[parseInt(e.key)]);
+              e.preventDefault();
+            }
+        }
+      });
+
+      // Click navigation (left 1/3 = prev, right 2/3 = next)
+      document.addEventListener('click', function (e) {
+        if (overview.classList.contains('visible')) return;
+        if (e.target.closest('.chapter-nav, .fullscreen-btn, .overview-grid')) return;
+        var x = e.clientX / window.innerWidth;
+        if (x < 0.33) prev(); else next();
+      });
+
+      // Touch swipe
+      var touchX = 0;
+      document.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+      document.addEventListener('touchend', function (e) {
+        if (overview.classList.contains('visible')) return;
+        var diff = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(diff) > 50) { diff > 0 ? prev() : next(); }
+      }, { passive: true });
+
+      // Chapter dots
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function (e) {
+          e.stopPropagation();
+          goTo(parseInt(dot.dataset.slide));
+        });
+      });
+
+      // Fullscreen
+      function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(function () { });
+        } else {
+          document.exitFullscreen();
+        }
+      }
+      fsBtn.addEventListener('click', function (e) { e.stopPropagation(); toggleFullscreen(); });
+
+      // Overview
+      function toggleOverview() {
+        if (overview.classList.contains('visible')) {
+          overview.classList.remove('visible');
+          return;
+        }
+
+        overview.innerHTML = '';
+        slides.forEach(function (slide, i) {
+          var thumb = document.createElement('div');
+          thumb.className = 'overview-thumb' + (i === current ? ' current' : '');
+          if (slide.classList.contains('slide-title') || slide.classList.contains('slide-chapter')) {
+            thumb.classList.add('dark-thumb');
+          }
+
+          var img = slide.querySelector('img');
+          if (img) {
+            var thumbImg = document.createElement('img');
+            thumbImg.src = img.src;
+            thumbImg.alt = img.alt;
+            thumb.appendChild(thumbImg);
+          } else {
+            var text = slide.querySelector('.chapter-title, .logo');
+            if (text) {
+              var label = document.createElement('span');
+              label.style.cssText = 'font-size:0.9rem;color:' + (slide.classList.contains('slide-title') || slide.classList.contains('slide-chapter') ? 'var(--dark-text)' : 'var(--text)');
+              label.textContent = text.textContent;
+              thumb.appendChild(label);
+            }
+          }
+
+          var num = document.createElement('span');
+          num.className = 'thumb-label';
+          num.textContent = (i + 1);
+          thumb.appendChild(num);
+
+          thumb.addEventListener('click', function (e) {
+            e.stopPropagation();
+            goTo(i);
+            overview.classList.remove('visible');
+          });
+
+          overview.appendChild(thumb);
+        });
+
+        overview.classList.add('visible');
+      }
+
+      updateUI();
+    })();
+  </script>
+</body>
+
+</html>
