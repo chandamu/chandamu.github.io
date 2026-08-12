@@ -24,7 +24,15 @@
         window.GA4_MEASUREMENT_ID = 'G-50E1EGRJF1';
     </script>
     <script>
-        // Skip loading GA script on localhost/dev loopback hosts.
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() { window.dataLayer.push(arguments); };
+        gtag('js', new Date());
+        gtag('config', window.GA4_MEASUREMENT_ID, {
+            anonymize_ip: true,
+            send_page_view: false  // We handle page views manually for SPA
+        });
+
+        // Skip loading GA script on localhost/dev loopback hosts; queued events are never sent.
         (function () {
             var host = window.location.hostname;
             var isLocalhost = host === 'localhost' || host === '127.0.0.1' || host === '::1';
@@ -36,15 +44,6 @@
             script.async = true;
             script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA4_MEASUREMENT_ID;
             document.head.appendChild(script);
-
-            // Initialize gtag
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', window.GA4_MEASUREMENT_ID, {
-                anonymize_ip: true,
-                send_page_view: false  // We handle page views manually for SPA
-            });
         })();
     </script>
 </head>

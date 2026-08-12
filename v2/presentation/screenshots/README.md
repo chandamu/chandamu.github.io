@@ -2,7 +2,7 @@
 
 Auto-generated presentation screenshots for the Chandam WASM app.
 
-Generated: 2026-05-16
+Generated: 2026-05-21
 
 ## Stories
 
@@ -40,7 +40,6 @@ Generated: 2026-05-16
 
 - ![create rule form](story-4-custom-rules/01-create-rule-form.png)
 - ![rule filled](story-4-custom-rules/02-rule-filled.png)
-- ![after creation](story-4-custom-rules/03-after-creation.png)
 - ![custom rules card](story-4-custom-rules/04-custom-rules-card.png)
 - ![compute custom rule](story-4-custom-rules/05-compute-custom-rule.png)
 
