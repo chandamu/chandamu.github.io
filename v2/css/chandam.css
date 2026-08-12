@@ -2440,8 +2440,49 @@ footer a:focus-visible {
 
 .toggle-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
+}
+
+.toggle-group.stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* ========================================
+   ADVANCED OPTIONS (Secondary Row)
+   ======================================== */
+.advanced-options {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.5rem;
+}
+
+.advanced-options summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  padding: 0.25rem 0;
+  user-select: none;
+}
+
+.advanced-options summary:hover {
+  color: var(--color-primary);
+}
+
+.advanced-options[open] summary {
+  color: var(--color-primary);
+}
+
+.advanced-options .toggle-group {
+  padding-top: 0.5rem;
+}
+
+.advanced-options .toggle-label {
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 /* Primary action button */
@@ -2558,6 +2599,10 @@ footer a:focus-visible {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+  }
+
+  .advanced-options .toggle-group {
+    justify-content: flex-start;
   }
 
   .toggle-switch {
@@ -2713,6 +2758,11 @@ footer a:focus-visible {
 
   .toggle-group {
     gap: 0.75rem;
+  }
+
+  .advanced-options summary,
+  .advanced-options .toggle-label {
+    font-size: 0.78rem;
   }
 
   .toggle-label {

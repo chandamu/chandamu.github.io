@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Chandam.Wasm",
   "resources": {
-    "hash": "sha256-HpKkULmG2HriyilprIVfq5cPRq1YL61q7qOlnoY+Htc=",
+    "hash": "sha256-/JYUNxNd7wLV9jY0oTxN7naRq1eIgmF+bY1NHV490r4=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-JTswf4CBcNmmrTGm6DppxYNII8GVEmbA3iXD3bU1fcA="
     },
@@ -18,11 +18,11 @@
     },
     "coreAssembly": {},
     "assembly": {
-      "Chandam.API.wasm": "sha256-zIYKU6NFNed0xHXfx6kOZhrBXRQbJARbE5Jf43ThhEM=",
-      "Chandam.Core.wasm": "sha256-OeGnIxW+P4qqRC+DSxuhynlqkshmgHY5f1U7o2bAh+g=",
-      "Chandam.Indic.wasm": "sha256-G/LakeqZCjZcWaOZr3BuYMvAZ3JWtmwICiVBlQA0X6s=",
-      "Chandam.Util.wasm": "sha256-H8M99AGzDN0oWGTCnbgneMaf3RKCtca4xqRwDs7V9Xo=",
-      "Chandam.Wasm.wasm": "sha256-Fy7nq7PggWAdr3HCksPef4VseYqB2DTjljJg6kEOWHA=",
+      "Chandam.API.wasm": "sha256-Q27tgCTuBwYjuCLqmQKdx6kKCHntRKloYWevXLyV2fA=",
+      "Chandam.Core.wasm": "sha256-PvWOFWcVib30S0LNg+WcPa2E/wqtM6opL5rbDszjlkM=",
+      "Chandam.Indic.wasm": "sha256-gWI5+ryMcUa+bOQSs7/9KGMXzJbiFtprRR6AHHrhJUw=",
+      "Chandam.Util.wasm": "sha256-1PajlxCkQKcr2lfGWAcxIGhIEVubwScKgVU9y5pK6no=",
+      "Chandam.Wasm.wasm": "sha256-K2LssGe3Xh2TME/CN6jO7YLPAFdQqsoVWIzNHIHXpGk=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-zfaxFApQau+w5vdreJZAWOv0Cwf/nZR8QJDnTYRCngQ=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-APxpxeS4pwlHkYnsapy+KQb9QmWTDvhbWTHJ60dHECo=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-dzGzc7tOTpFbsyHJarg3WSOsevnBXQGmt3YsvaRtNc0=",
