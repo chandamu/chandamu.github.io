@@ -1,7 +1,7 @@
 
 ================================================================
            CHANDAM - CODE METRICS REPORT
-           2026-08-12 21:08
+           2026-08-20 01:24
 ================================================================
 
 -- Lines of Code (CS, excluding obj/bin/Obsolete/Rules) --
@@ -57,22 +57,22 @@ TOTAL                                169   34810   26453    4342   4015
 
 -- Project dependency depth (ProjectReference chain) --
 
-  Chandam.MCP.Stdio                        depth 5
-  Chandam.MCP.Tests                        depth 5
-  Chandam.MCP.Http                         depth 5
   Chandam.API.IntegrationTests             depth 5
+  Chandam.MCP.Tests                        depth 5
+  Chandam.MCP.Stdio                        depth 5
+  Chandam.MCP.Http                         depth 5
+  Chandam.Wasm                             depth 4
   Chandam.API.Demo                         depth 4
+  Chandam.API.WebApi                       depth 4
   Chandam.MCP.Tools                        depth 4
   Chandam.Tasks                            depth 4
-  Chandam.Wasm                             depth 4
-  Chandam.API.WebApi                       depth 4
   Chandam.API                              depth 3
   Chandam.Core                             depth 2
   Chandam.Indic                            depth 1
   Chandam.Rules                            depth 1
   Chandam.Util                             depth 0
-  Chandam.Samples                          depth 0
   Chandam.Dictionary                       depth 0
+  Chandam.Samples                          depth 0
 
 -- Summary --
   Total C# files : 169
