@@ -2476,6 +2476,28 @@ footer a:focus-visible {
   color: var(--color-primary);
 }
 
+/* Active flags stay visible once the row is collapsed */
+.advanced-options.active summary {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.advanced-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  margin-left: 0.35rem;
+  padding: 0 0.25rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: var(--color-header-text);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
 .advanced-options .toggle-group {
   padding-top: 0.5rem;
 }
@@ -2488,6 +2510,12 @@ footer a:focus-visible {
 /* Primary action button */
 .main-actions {
   margin: 0;
+}
+
+/* Editor card: actions sit on their own row, below the Advanced row */
+.editor-section > .main-actions {
+  margin-top: 0.75rem;
+  justify-content: flex-end;
 }
 
 .btn-primary {
