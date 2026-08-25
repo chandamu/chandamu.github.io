@@ -1,7 +1,7 @@
 
 ================================================================
            CHANDAM - CODE METRICS REPORT
-           2026-08-20 01:24
+           2026-08-25 00:26
 ================================================================
 
 -- Lines of Code (CS, excluding obj/bin/Obsolete/Rules) --
@@ -32,10 +32,10 @@ Chandam.MCP.Tests                      1     368     278      67     23
 Chandam.Wasm                           4     763     621      93     49
 
   [Tasks]
-Chandam.Tasks                         37    9499    6576    1346   1577
+Chandam.Tasks                         37    9518    6592    1348   1578
 
 ----------------------------------------------------------------------
-TOTAL                                169   34810   26453    4342   4015
+TOTAL                                169   34829   26469    4344   4016
 
 -- File distribution (all types, including WASM/Node/etc; excluding obj/bin/Obsolete/Rules) --
 
@@ -57,29 +57,29 @@ TOTAL                                169   34810   26453    4342   4015
 
 -- Project dependency depth (ProjectReference chain) --
 
-  Chandam.API.IntegrationTests             depth 5
-  Chandam.MCP.Tests                        depth 5
-  Chandam.MCP.Stdio                        depth 5
   Chandam.MCP.Http                         depth 5
-  Chandam.Wasm                             depth 4
+  Chandam.API.IntegrationTests             depth 5
+  Chandam.MCP.Stdio                        depth 5
+  Chandam.MCP.Tests                        depth 5
   Chandam.API.Demo                         depth 4
   Chandam.API.WebApi                       depth 4
-  Chandam.MCP.Tools                        depth 4
   Chandam.Tasks                            depth 4
+  Chandam.Wasm                             depth 4
+  Chandam.MCP.Tools                        depth 4
   Chandam.API                              depth 3
   Chandam.Core                             depth 2
-  Chandam.Indic                            depth 1
   Chandam.Rules                            depth 1
-  Chandam.Util                             depth 0
+  Chandam.Indic                            depth 1
   Chandam.Dictionary                       depth 0
+  Chandam.Util                             depth 0
   Chandam.Samples                          depth 0
 
 -- Summary --
   Total C# files : 169
-  Total lines    : 34810
-  Code lines     : 26453
-  Comment lines  : 4015 (11.5%)
-  Blank lines    : 4342 (12.5%)
+  Total lines    : 34829
+  Code lines     : 26469
+  Comment lines  : 4016 (11.5%)
+  Blank lines    : 4344 (12.5%)
 
   Tip: Run with -Deep for cyclomatic complexity, inheritance depth, and long-method detection.
 
